@@ -1,18 +1,10 @@
-#walDir="${HOME}/Pictures/Art/Wallpaper"
-walDir="/media/veracrypt3/Drive/Wallpaper"
-#walDir=bfind $HOME/Pictures/Art/Wallpaper |shuf -n 1 | cut -d "/" -f4-
-#walDir=bfind $walDir
+#walDir="/media/veracrypt3/Drive/Wallpaper"
 
+# Base directory
+walDir="${HOME}/Pictures/Art/Wallpaper"
+
+# Look into subfolders and pick at random
 walDir=$(find $walDir |shuf -n 1)
 
-
-
+# Apply!
 wal -i $walDir
-
-#ocDir="${HOME}/Pictures/Art/Wallpaper"
-
-#ls $ocDir |sort -R |tail -n1 |while read file; do
-#    # Select one random file from directory
-#    echo $ocDir
-#    wal -i ${ocDir}${file}
-#done
