@@ -1,10 +1,21 @@
-#walDir="/media/veracrypt3/Drive/Wallpaper"
 
-# Base directory
-walDir="${HOME}/Pictures/Art/Wallpaper"
+# Set main wallpaper directory
 
-# Look into subfolders and pick at random
+#walDir="${HOME}/Pictures/Art/Wallpaper"
+#walDir="/media/veracrypt3/Drive/Wallpaper/Simple"
+#walDir="/mnt/DataPartition/Pictures/Wallpaper/Simple"
+walDir="/mnt/DataPartition/Pictures/Wallpaper/Desktop"
+
+# Recursively check directory
 walDir=$(find $walDir |shuf -n 1)
 
-# Apply!
-wal -i $walDir
+# Call pywal in order. Remove --iterative flag to pick random wallpaper
+wal --iterative -i $walDir
+
+# If using spicetify skin, reload config (still needs to restart Spotify). Needs wal theme
+#spicetify update
+
+
+
+
+
